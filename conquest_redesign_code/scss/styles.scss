@@ -1,0 +1,894 @@
+
+
+$rust: #a15b50;
+$ltgray:#bab2ae;
+$bluebg:#161927;
+$lttan:#e8ddd6;
+$gold:#eac077;
+
+
+$fontM5: "museo-n5";
+$fontM3: "museo-n3";
+$fontR: "raleway";
+
+
+$large: 600px;
+
+@mixin clearfix {
+  &:after { content: ""; display: table; clear: both; }
+}
+
+@mixin breakpoint($point) {
+    @media screen and ('min-width:' + $point) {
+        @content;
+    }
+}
+
+body, html{
+	height: 100%;
+
+}
+
+body{
+	
+	background: url(../img/background.png) center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+	background-size: cover;
+
+}
+
+
+header{
+	@include clearfix;
+
+}
+
+.logo{
+	text-align: center;
+	display: block;
+	width: 50%;
+	margin: 20px;
+
+	img{
+		width: 100%;
+	}
+
+	a{
+		display: block;
+	}
+	
+	@include breakpoint($large){
+
+		float: left;
+		width: 20%;
+		margin-left: 40px;
+
+	}
+
+}
+
+nav{
+	@include clearfix;
+}
+
+nav ul{
+
+	list-style: none;
+
+
+	@include breakpoint($large){
+		list-style:none;
+		float: right;
+		width: 70%;
+		padding: 0;
+		margin:20px 40px 20px 0px;
+		text-align: right;
+
+	}
+}
+
+
+nav li{
+	display: inline-block;
+	padding: 10px;
+
+	@include breakpoint($large){
+		padding:10px;
+
+	}
+}
+
+nav a{
+	display: block;
+	text-decoration: none;
+	color:$lttan;
+	font-family: "raleway", sans-serif;
+	font-weight: 100;
+	text-align: center;
+	text-shadow: -1px 3px 3px rgba(0, 0, 0, 0.5);
+
+	@include breakpoint($large){
+		&:hover{
+			// text-shadow:0px 0px 0px rgba(0, 0, 0, 0.5)
+			color:$gold;
+		}
+	}
+}
+
+.wrapper{
+	background: $bluebg;
+	padding-bottom:20px;
+	// padding-left: 40px;
+	// padding-right: 40px;
+	margin:0 auto;
+	@include clearfix;
+	@include breakpoint($large){
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+.home_wrapper{
+	background: $bluebg;
+	padding-bottom:20px;
+	width: 80%;
+	margin: 0 auto;
+	@include clearfix;
+}
+
+.home_info_container{
+	width: 90%;
+	margin:0 auto;
+	padding-top: 20px;
+	@include clearfix;
+
+	h5{
+		
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	ul{
+		margin: 0 auto;
+	}
+	li{
+		@include clearfix;
+	}
+	
+	@include breakpoint($large){
+		width: 40%;
+		float: left;
+		// div{
+		// 	width: 48%;
+		// 	float: left;
+
+		// }
+	}
+}
+
+.map_container{
+
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 40px;
+
+
+	@include breakpoint($large){
+		width: 25%;
+		float: left;
+		
+	}
+	
+
+
+
+	img{
+		width: 100%;
+	}
+}
+
+
+
+.about_img_container{
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+
+	img{
+		width: 100%;
+	}
+
+	@include breakpoint($large){
+		width: 29%;
+		float: left;
+		margin-left:40px;
+
+	}
+}
+
+blockquote{
+	text-align: center;
+	color: $rust;
+	font-family: "raleway", sans-serif;
+}
+
+h3{
+	font-family: "museo", serif;
+	color: $rust;
+	font-size: 2em;
+	font-weight: 500;
+	margin:0 auto;
+	margin-left: 40px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	
+}
+
+
+h4{
+	font-family: "museo", serif;
+	font-weight: 300;
+	color: $rust;
+	margin: 0 auto;
+	margin-left:40px;
+	font-size:1.5em;
+	margin-top: 50px;
+
+}
+
+h5{
+	font-family: "raleway", sans-serif;
+	font-weight: 100;
+	color: $ltgray;
+	font-size:1.3em;
+	margin: 0 auto;
+	padding-top:10px;
+	width: 90%;
+
+	a{
+		text-decoration: none;
+		color:$ltgray;
+	}
+}
+
+h6{
+	font-family: "raleway", sans-serif;
+	font-weight: 100;
+	color: $ltgray;
+	font-size:1em;
+	margin: 0 auto;
+	padding-top:10px;
+	padding-bottom: 20px;
+	margin-left: 40px;
+
+}
+p{
+	font-family: "raleway", sans-serif;
+	font-weight: 100;
+	color: $ltgray;
+	width: 90%;
+	margin:0 auto;
+	line-height: 1.5em;
+
+}
+.about_us_content{
+	@include clearfix;
+	margin-top: 20px;
+}
+
+
+.about_us_info{
+	@include breakpoint($large){
+		width: 64%;
+		float: right;
+
+		p{
+			width: 95%;
+		}
+	}
+}
+
+.bio_photo_container{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+
+	img{
+		width: 100%;
+
+	}
+}
+
+.about_us_bios, .about_us_links{
+	@include breakpoint($large){
+		h4{
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.bio_person_info{
+	@include breakpoint($large){
+		@include clearfix;
+		margin-bottom: 50px;
+		
+
+		.bio_photo_container{
+			float: left;
+			width: 32%;
+			margin-left: 40px;
+			margin-top: 10px;
+
+
+		}
+
+		.person_info{
+			float: right;
+			width: 63%;
+			vertical-align: top;
+
+			p{
+				margin-left: 40px;
+				width: 90%;
+			}
+		}
+	}
+}
+
+.about_us_links{
+	@include clearfix;
+}
+.about_us_links_img_container{
+	width: 65%;
+	margin: 0 auto;
+	padding-top:20px;
+	padding-bottom: 20px;
+
+	img{
+		width: 100%;
+	}
+
+	@include breakpoint($large){
+		width: 30%;
+		float: left;
+		margin-left: 5%;
+		padding:0;
+		padding-top: 10px;
+	}
+}
+
+.about_us_links_info{
+
+	margin-top:10px;
+
+	p{
+		margin-bottom: 10px;
+	}
+
+	ul{
+		list-style: none;
+		margin: 0 auto;
+		padding: 0;
+		width: 80%;
+
+		li{
+			display: block;
+			padding-bottom:5px;
+			line-height: 1.5em;
+			
+		}
+		a{
+			display: block;
+			font-family: "raleway", sans-serif;
+			font-weight: 100;
+			color: $ltgray;
+		}
+
+	}
+
+	@include breakpoint($large){
+		width: 60%;
+		float: left;
+
+		ul{
+			width: 45%;
+			float: left;
+			margin-left: 5%;
+			margin-top: 20px;
+		}
+
+		h5{
+			
+			font-size: 1.2em;
+			padding:0;
+		}
+	}
+}
+
+footer{
+
+	margin: 10px auto;
+	@include clearfix;
+
+	.email_links a{
+		display: block;
+		color: $lttan;
+		font-family: "raleway", sans-serif;
+		font-weight: 100;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+
+
+	.social_links{ 
+
+		margin:0 auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+		ul{
+			list-style: none;
+			margin: 0 auto;
+			padding:0;
+			text-align: center;
+		}
+
+		li{
+			display: inline-block;
+			text-align: center;
+			margin: 5px;
+		}
+
+		a{
+			display: block;
+			text-decoration: none;
+			color: $lttan;
+			font-family: "raleway", sans-serif;
+			font-weight: 100;
+			text-align: center;
+			background:$bluebg;
+			padding: 10px 15px;
+			border-radius: 10px;
+
+		}
+	}
+
+	@include breakpoint($large){
+		.email_links{
+			float: left;
+			width: 30%;
+		}
+		.social_links{
+			float: left;
+			width: 20%;
+		}
+
+		.copyright{
+			float: right;
+			width: 40%;
+			font-size: .8em;
+			p{
+				margin: 0;
+				padding:0;
+				display: inline-block;
+			}
+		}
+	}
+
+}
+
+
+.beer_stats{
+
+	@include clearfix;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom:30px;
+
+
+
+	h5{
+		margin: 0px 0px 10px 0px;
+		font-weight: 100;
+
+	}
+
+	ul{
+		list-style: none;
+		padding:0;
+		margin: 0;
+		@include clearfix;
+	}
+	li{
+		display: block;
+		@include clearfix;
+
+		p{
+			line-height: 1.5em;
+			font-weight: 100;
+			font-family: "raleway", sans-serif;
+			color:$ltgray;
+
+		}
+	}
+
+	.stat_category{
+		float: left;
+		width: 25%;
+
+	}
+
+	.stat_detail{
+		float: left;
+		width: 75%;
+	}
+
+	.more_link{
+		text-decoration: none;
+		font-family: "raleway", sans-serif;
+		color: $rust;
+		margin-right: 20px;
+		margin-left: 70%;
+		
+	}
+
+}
+
+.availability{
+	@include clearfix;
+	clear: both;
+	width: 95%;
+	margin:0 auto;
+
+	h4{
+		margin-left: 0px;
+	}
+}
+
+.beer_stats{
+
+	@include breakpoint($large){
+		width: 260px;
+		padding: 0 5px 20px 5px;
+		height: 250px;
+		float: left;
+		margin: 0 auto;
+		vertical-align: top;
+		margin-right: 2%;
+
+	}
+}
+
+.taste_room_img_container{
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	img{
+		width: 100%;
+	}
+
+	@include breakpoint($large){
+		width: 40%;
+		float: left;
+		padding:0;
+		margin-left: 40px;
+		
+		img{
+			width: 100%;
+			
+		}
+	}
+}
+
+.tasting_room_content{
+	@include clearfix;
+}
+
+.tasting_room_info{
+	
+
+	@include breakpoint($large){
+		width: 55%;
+		float: right;
+
+		p{
+			margin-left:40px;
+			margin-bottom: 20px;
+		}
+	}
+	
+}
+
+.tasting_room_details{
+	@include breakpoint($large){
+		clear: both;
+		padding-top:50px;
+	}
+}
+
+.tasting_room_details_img_container{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 20px;
+	img{
+		width: 100%;
+	}
+
+	@include breakpoint($large){
+		width: 40%;
+		float: left;
+		img{
+			width: 95%;
+		}
+	}
+}
+
+.tasting_room_details_container{
+	@include breakpoint($large){
+		width: 58%;
+		float: left;
+	}
+}
+
+.tasting_room_details_container div{
+
+	h5{
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+
+	a{
+		display: block;
+		text-decoration: none;
+		color: $ltgray;
+		font-family: "raleway", sans-serif;
+		font-weight: 100;
+	}
+
+	// @include breakpoint($large){
+	// 	width: 50%;
+	// 	float: left;
+
+	// }
+}
+
+
+.hours_list{
+
+	width: 90%;
+	margin: 0 auto;
+	list-style:none;
+	padding:0;
+
+	line-height: 1.5em;
+	font-weight: 100;
+	font-family: "raleway", sans-serif;
+
+	li{
+		@include clearfix;
+	}
+
+	.stat_category{
+		float: left;
+		width: 40%;
+
+		@include breakpoint($large){
+			width: 40%;
+		}
+
+	}
+
+	.stat_detail{
+		float: left;
+		width: 50%;
+
+		@include breakpoint($large){
+			width: 50%;
+			
+		}
+	}
+
+}
+
+
+
+.on_tap{
+	@include clearfix;
+
+	h4{
+		margin-top: 50px;
+	}
+
+	h5{
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+
+	ul{
+		list-style: none;
+		padding:0;
+		margin: 0 auto;
+		width: 90%;
+
+		li{
+			color:$ltgray;
+			line-height: 1.5em;
+			font-family: "raleway", sans-serif;
+			font-weight: 100;
+
+		}
+	}
+
+	@include breakpoint($large){
+		.on_tap_lists{
+			width: 55%;
+			float: right;
+
+
+			.current_list{
+				width: 45%;
+				float: left;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+.on_tap_img_container{
+	width: 70%;
+	margin: 20px auto;
+	padding-bottom: 20px;
+
+
+	img{
+		width: 100%;
+	}
+	@include breakpoint($large){
+		width: 38%;
+		float: left;
+		margin-left: 40px;
+	}
+
+
+}
+
+.contact_us_img_container{
+	width: 80%;
+	margin: 0 auto;
+	img{
+		width: 100%;
+	}
+}
+
+.contact_us_info{
+	@include clearfix;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom:30px;
+
+
+
+	h5{
+		margin: 0px 0px 10px 0px;
+		font-weight: 100;
+
+	}
+
+	ul{
+		list-style: none;
+		padding:0;
+		margin: 0;
+		// margin-left: 20px;
+	}
+	li{
+		display: block;
+		margin-bottom: 20px;
+
+		p{
+			line-height: 1.5em;
+			font-weight: 100;
+			font-family: "raleway", sans-serif;
+			margin: 0;
+			padding: 0;
+
+		}
+	}
+
+	a{
+		color:$ltgray;
+
+	}
+
+}
+
+.painting_container{
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 20px;
+
+	img{
+		width: 100%;
+	}
+
+	@include breakpoint($large){
+		width: 40%;
+		margin-left: 3%;
+		float: left;
+	}
+}
+
+.subsub_heading{
+	margin-top: 0px;
+}
+
+.detail_container{
+	@include clearfix;
+}
+
+.vital_stats{
+	@include clearfix;
+	width: 80%;
+	margin: 0 auto;
+
+	h5{
+		margin-left: 0px;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0 auto;
+		padding-bottom: 10px;
+
+		li{
+			@include clearfix;
+		}
+	}
+
+	.stat_category{
+		float: left;
+		width: 20%;
+
+	}
+
+	.stat_detail{
+		float: left;
+		width: 80%;
+	}
+
+	// @include breakpoint($large){
+	// 	width: 70%;
+	// 	margin-left: 5%;
+	// 	float: left;
+	// }
+}
+
+
+.vital_stats{
+	@include breakpoint($large){
+		width: 95%;
+		font-size: 1em;
+	}
+}
+
+.artemis_info{
+	@include breakpoint($large){
+		width: 55%;
+		float: right;
+		p{
+			width: 95%;
+		}
+
+		blockquote{
+		font-size: .9em;
+		font-weight: lighter;
+		margin-left: 40px;
+		margin-right: 40px;
+
+		}
+	
+	}	
+}

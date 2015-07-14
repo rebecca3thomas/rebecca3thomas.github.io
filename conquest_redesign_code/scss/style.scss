@@ -1,0 +1,151 @@
+$rust: #a15b50;
+$ltgray:#bab2ae;
+$bluebg:#161927;
+$lttan:#e8ddd6;
+$gold:#eac077;
+$blueborder: #262835;
+
+$medium: 600px;
+$large: 900px;
+
+@mixin clearfix {
+  &:after { content: ""; display: table; clear: both; }
+}
+
+@mixin breakpoint($point) {
+    @media screen and ('min-width:' + $point) {
+        @content;
+    }
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+	
+	background: url(../img/background.png) center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+	background-size: cover;
+
+}
+
+header{
+	background: url(../img/background.png) center center;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+ 	background-size: cover;
+  	position: fixed;
+  	width: 100%;
+  	top: 0;
+  	// max-height: 90px;
+   
+  	@include clearfix;
+
+}
+
+.logo{
+	text-align: center;
+	display: block;
+	
+	width: 65%;
+	padding-left: 10px;
+
+	img{
+		width: 100%;
+	}
+
+	a{
+		display: block;
+	}
+	
+	@include breakpoint($large){
+
+		float: left;
+		width: 20%;
+		padding-left: 40px;
+
+	}
+
+}
+
+nav{
+	// float: right;
+	// width: 60%;
+
+	@include breakpoint($large){
+		float: right;
+		width: 75%;
+	}
+	
+
+	ul{
+		list-style: none;
+		padding:0;
+	}
+
+	li{
+		display: inline-block;
+
+	}
+	a{
+		display: block;
+		text-decoration: none;
+		color:$lttan;
+		font-family: "raleway", sans-serif;
+		font-weight: 100;
+		text-align: center;
+		text-shadow: -1px 3px 3px rgba(0, 0, 0, 0.5);
+
+		@include breakpoint($large){
+			&:hover{
+				// text-shadow:0px 0px 0px rgba(0, 0, 0, 0.5)
+				color:$gold;
+			}
+		}
+
+	}
+}
+.wrapper{
+	background: $bluebg;
+	width: 96%;
+	padding: 5%;
+	margin:0 auto;
+	max-width: 1000px;
+	margin-top: 100px;
+
+	@include breakpoint($large){
+		margin-top: 80px;
+	}
+
+
+}
+
+h3{
+	font-family:"museo", serif;
+	font-weight:500;
+	color: $rust;
+	font-size: 2.2em;
+	padding:0;
+	margin:0;
+	padding-bottom: 10px;
+	
+	border-bottom: 5px $blueborder solid;
+}
+
+.page_intro{
+	font-family: "raleway", sans-serif;
+	font-weight: 100;
+	color: $lttan;
+	padding: 10px 0;
+	margin:0;
+
+}
+
+
+
